@@ -1,5 +1,5 @@
 import "./Forecast.css";
-//16/08/2022 
+
 export default function Forecast() {
   return (
     <div className="forecast-form">
