@@ -1,0 +1,76 @@
+hr {
+    background-color: red;
+    height: 4px;
+    border-radius: 3px;
+  }
+  p {
+    margin: 5px auto;
+  }
+  .currentInfo {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+  .currentCity {
+    font-size: 26px;
+    line-height: 16px;
+    color: darkblue;
+  }
+  .currentTime,
+  .currentDescription,
+  .wind,
+  .humidity,
+  .windF,
+  .humidityF {
+    font-size: 12px;
+    line-height: 16px;
+    color: #000;
+    font-weight: 500;
+  }
+  .currentDescription {
+    text-transform: capitalize;
+  }
+  .currentTime {
+    margin-top: 12px;
+  }
+  
+  .TempC,
+  .TempF,
+  .TempCtoF,
+  .TempFtoC {
+    font-size: 26px;
+    line-height: 16px;
+    color: red;
+    font-weight: 500;
+  }
+  .currentTemp {
+    display: block;
+  }
+  a.secondTemp {
+    text-decoration: none;
+    cursor: pointer;
+    color: darkblue;
+    font-size: 26px;
+    font-weight: 300;
+  }
+  .secondTemp {
+    cursor: pointer;
+    color: darkblue;
+    font-size: 26px;
+    font-weight: 300;
+  }
+  .secondTemp:hover {
+    font-weight: 500;
+  }
+  
+  .hiddenTemp {
+    display: none;
+  }
+  .col-2 {
+    padding: 0;
+  }
+  img.currentPicture {
+    text-align: center;
+    width: 70px;
+    height: 70px;
+  }

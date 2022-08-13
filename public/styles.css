@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+ 
+}
+p#linkToGithub {
+    margin: 5px auto;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bolder;
+  }

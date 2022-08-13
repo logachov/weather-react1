@@ -1,0 +1,34 @@
+.forecast {
+    margin: 0 auto;
+  }
+  .card {
+    padding: 5px;
+  }
+  .card-title {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 5px 0 0 0;
+    text-align: center;
+  }
+  .days {
+    font-size: 12px;
+    font-weight: bold;
+    color: darkblue;
+  }
+  .tempMax {
+    color: red;
+  }
+  .tempMin {
+    color: blue;
+  }
+  .card {
+    border: none;
+  }
+  .card {
+    width: 78px;
+    background-color: rgb(170, 210, 250);
+  }
+  .card-cont {
+    padding: 0 2px;
+  }
+  
