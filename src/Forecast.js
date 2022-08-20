@@ -1,11 +1,47 @@
-import "./Forecast.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ForecastDay from "./ForecastDay";
 
-export default function Forecast() {
-  return (
-    <div className="forecast-form">
-      <div className="row forecast">
-        <div className="btn-group btn-group-justified" id="group"></div>
+export default function Forecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
+
+  function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
+
+  function load() {
+    let apiKey = "e9d47882db969286a1c0efbaf8496750";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (loaded) {
+    return (
+      <div className="btn-group btn-group-justified">        
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 5) {
+            return (
+              <div className="col card-cont" key={index}>
+                <ForecastDay data={dailyForecast} />
+              </div>  
+            );
+          } else {
+              return null;
+          }
+        })}
       </div>
-    </div>
-  );
+    );
+  } else {
+      load();
+      return null;
+  }
 }

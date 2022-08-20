@@ -5,6 +5,7 @@ import Currentdate from "./Currentdate";
 export default function Current(props) {
 const [celsius, setCelsius] = useState("col-4 currentTemp");
 const [farenheit, setFarenheit] = useState("col-4 hiddenTemp");
+
 function convertUnit(event) {
   event.preventDefault();
   if (celsius === "col-4 currentTemp") {

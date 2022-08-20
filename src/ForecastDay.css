@@ -15,10 +15,10 @@
     font-weight: bold;
     color: darkblue;
   }
-  .tempMax {
+  #tempMax {
     color: red;
   }
-  .tempMin {
+  #tempMin {
     color: blue;
   }
   .card {

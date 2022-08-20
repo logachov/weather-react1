@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Search.css";
 import Current from "./Current";
+import Forecast from "./Forecast";
 
 export default function Search(props) {
   const apiKey = "e9d47882db969286a1c0efbaf8496750";
   const [weatherInfo, setWeatherInfo] = useState({ statusOK: false });
   const [city, setCity] = useState(props.defaultCity);
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+ 
   function getInfo(response) {
     setWeatherInfo({
-      city: response.data.name,      
+      city: response.data.name,   
+      coordinates: response.data.coord,   
       temperature: Math.round(response.data.main.temp),  
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
@@ -47,7 +49,13 @@ export default function Search(props) {
           Search
         </button>
       </form>      
-      <Current data={weatherInfo}/>
+      <Current data={weatherInfo} />
+      <div className="row forecast">
+        
+        <Forecast coordinates={weatherInfo.coordinates} /> 
+        
+      </div>
+      
     </div>
   );
   } else {
